@@ -1,0 +1,5 @@
+##
+## z_iptables domain for respectve service definition
+##
+type z_iptables, domain;
+type z_iptables_exec, exec_type, file_type, system_file_type;

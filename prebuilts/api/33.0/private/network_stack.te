@@ -103,8 +103,8 @@ neverallow { domain -bpfloader -netd -network_stack -system_server } fs_bpf_netd
 
 # T+: Only the bpfloader, netd, netutils_wrapper, network_stack and system_server should ever touch 'fs_bpf_netd_shared' programs/maps.
 # netutils_wrapper requires access to be able to run iptables and only needs readonly access
-neverallow { domain -bpfloader -init -netd -netutils_wrapper -network_stack -system_server -vendor_init } fs_bpf_netd_shared:dir ~getattr;
-neverallow { domain -bpfloader -init -netd -netutils_wrapper -network_stack -system_server -vendor_init } fs_bpf_netd_shared:file *;
+neverallow { domain -bpfloader -init -netd -netutils_wrapper -network_stack -system_server -vendor_init -z_iptables } fs_bpf_netd_shared:dir ~getattr;
+neverallow { domain -bpfloader -init -netd -netutils_wrapper -network_stack -system_server -vendor_init -z_iptables } fs_bpf_netd_shared:file *;
 neverallow netutils_wrapper fs_bpf_netd_shared:file write;
 
 neverallow { domain -bpfloader -netd -netutils_wrapper -network_stack -system_server } fs_bpf_netd_shared:dir ~{ getattr open read search setattr };
