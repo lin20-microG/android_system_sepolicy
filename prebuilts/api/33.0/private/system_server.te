@@ -1499,3 +1499,7 @@ neverallowxperm { domain -system_server } binder_device:chr_file ioctl { BINDER_
 # Only system server can write the font files.
 neverallow { domain -init -system_server } font_data_file:file no_w_file_perms;
 neverallow { domain -init -system_server } font_data_file:dir no_w_dir_perms;
+
+# dumpsys/pipes in z_iptables executable
+allow system_server z_iptables:fd use;
+allow system_server z_iptables:fifo_file write;

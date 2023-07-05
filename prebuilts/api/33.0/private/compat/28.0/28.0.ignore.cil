@@ -157,4 +157,7 @@
     vendor_task_profiles_file
     vndk_prop
     vrflinger_vsync_service
-    watchdogd_tmpfs))
+    watchdogd_tmpfs
+    z_iptables
+    z_iptables_exec
+    z_iptables_tmpfs))
